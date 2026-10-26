@@ -1,1 +1,17 @@
-![image](https://github.com/user-attachments/assets/d72f7d2a-bee7-4ac3-a0e9-1176101093bc)
+# DockerPost — подъём PostgreSQL в Docker
+
+Домашняя работа курса «Тестировщик»: разворачивание СУБД и тестового приложения через Docker Compose.
+
+## Состав
+- `docker-compose.yml` — сервис PostgreSQL 12 (alpine) с томом для данных, БД `app`, пользователь `app`/`pass`
+- `db-api.jar` — тестовое приложение для проверки подключения
+- `application.properties` — настройки подключения к СУБД
+
+## Запуск
+```PowerShell
+docker-compose up -d
+java -jar db-api.jar
+```
+
+## Назначение
+Отработка типовых задач стенда QA: поднять окружение одной командой, пробросить порты, смонтировать volume, проверить связку «приложение ↔ база».
